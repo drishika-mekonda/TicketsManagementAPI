@@ -1,0 +1,33 @@
+<h2>Tickets</h2>
+
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="error">{{ error }}</div>
+
+<table *ngIf="!loading && tickets.length">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Short</th>
+      <th>Description</th>
+      <th>Created</th>
+      <th>Severity</th>
+      <th>Target</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let t of tickets">
+      <td>{{ t.id }}</td>
+      <td>{{ t.shortDescription }}</td>
+      <td>{{ t.description }}</td>
+      <td>{{ t.createdDate | date:'mediumDate' }}</td>      <!-- mediumDate format -->
+      <td>{{ t.severity }}</td>
+      <td>{{ t.targetDate | date:'mediumDate' }}</td>      <!-- mediumDate format -->
+      <td>{{ t.status }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && !tickets.length">
+  No tickets found.
+</div>

@@ -1,0 +1,3 @@
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px; border-bottom: 1px solid #ddd; }
+thead { background: #007bff; color: white; }
